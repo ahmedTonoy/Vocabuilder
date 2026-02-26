@@ -1,0 +1,26 @@
+*{
+  font-family: "Poppins", sans-serif;;
+}
+
+.bangla-font{
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.mw{
+  max-width: 1200px;
+}
+
+.wavy-border {
+  position: relative;
+  border-radius: 20px; /* Rounded corners */
+  padding: 20px;
+  background: white; /* Content background */
+  
+  /* The Border Gradient */
+  border: 10px solid transparent;
+  border-image: linear-gradient(to bottom right, #00c6ff, #0072ff) 1;
+  
+  /* Wavy Mask Effect (simplified) */
+  -webkit-mask: radial-gradient(circle at 50% -10px, #000 20px, #0000 21px) 0 0 / 40px 100% repeat-x;
+  mask: radial-gradient(circle at 50% -10px, #000 20px, #0000 21px) 0 0 / 40px 100% repeat-x;
+}

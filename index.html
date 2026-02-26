@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Title & Logo -->
   <title>Vocabuilder | Learn words effortlessly</title>
-  <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/modified.png" type="image/x-icon">
   <!-- Fontawesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
   <!-- Tailwind & Daisy UI CDN -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
@@ -19,6 +24,109 @@
   <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-  <p>Vocabuilder</p>
+  <header class="bg-[#badeff42]  border-[#C6BDBD]">
+    <div class="mw mx-auto">
+      <div class="navbar p-4 py-3">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              <li>
+                <a href=""><i class="fa-solid fa-circle-question"></i>FAQ</a>
+              </li>
+              <li>
+                <a href=""><i class="fa-solid fa-book-open"></i>Learn</a>
+              </li>
+              <li>
+                <a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+              </li>
+            </ul>
+          </div>
+          <a href="" class="flex items-center gap-1 text-xl">
+            <img class="w-14 h-14" src="./assets/modified.PNG" alt="">
+            <p class="font-bold text-3xl">Voca<span class="text-[#00BCFF]">builder</span> </p>
+          </a>
+        </div>
+        <div class="navbar-end hidden lg:flex">
+          <ul class="menu menu-horizontal space-x-4 px-1">
+            <li>
+              <a href="" class="btn btn-outline btn-primary"><i class="fa-solid fa-circle-question"></i>FAQ</a>
+            </li>
+            <li>
+              <a href="" class="btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>Learn</a>
+            </li>
+            <li>
+              <a href="" class="btn btn-outline btn-primary"><i
+                  class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="mw mx-auto flex flex-col-reverse md:flex-row justify-between items-center my-5 md:my-8 px-4">
+    <div class="content max-w-150 text-center md:text-left">
+      <h1 class="font-bold text-5xl"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+      <p class="bangla-font font-semibold text-xl my-4">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন
+        অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+      <form action="" class="flex flex-col gap-3 items-center md:items-start">
+        <input type="text" placeholder="Enter your name" class="input" />
+        <input type="password" placeholder="Password" class="input" />
+        <button class="btn btn-primary w-fit">Get Started</button>
+      </form>
+    </div>
+    <div class="image mb-10 md:mb-0 rounded-full bg-[#00BCFF] max-w-110">
+      <img class="" src="./assets/latest-hero.png" alt="">
+    </div>
+  </section>
+  <section class="mw mx-auto px-4">
+    <h1 class="font-bold text-4xl text-center mt-9"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
+    <div id="level-container" class="flex flex-wrap justify-center gap-4 my-9">
+    </div>
+    <div id="no-lesson-selected" class="bangla-font text-center bg-[#F8F8F8] py-10 mb-9 rounded-3xl">
+      <p class="text-[#79716B] text-sm">আপনি এখনো কোন Lesson Select করেননি</p>
+      <h1 class="font-semibold text-2xl mt-4">একটি Lesson Select করুন।</h1>
+    </div>
+  </section>
+  <section class="mw mx-auto px-4">
+    <div id="lesson-words-container" class="hidden grid-cols-1 md:grid-cols-3 items-center justify-center gap-4 auto-rows-max p-4 rounded-3xl bg-[#F8F8F8]">
+    </div>
+    <div id="error-tab" class="hidden bangla-font text-center bg-[#F8F8F8] py-10 mb-9 rounded-3xl">
+      <div class="mx-auto w-fit"><img src="./assets/alert-error.png" alt=""></div>
+      <p class="text-[#79716B] text-sm">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+      <h1 class="font-semibold text-2xl mt-4">নেক্সট Lesson এ যান</h1>
+    </div>
+  </section>
+
+  <dialog id="my_modal_1" class="modal">
+    <div class="modal-box p-3">
+      <div class="border border-[#EDF7FF] rounded-xl p-3">
+        <h1 class="text-2xl font-bold">Eager (<span><i class="fa-solid fa-microphone-lines"></i></span>:ইগার)</h1>
+        <h2 class="font-bold text-xl mt-7 mb-2">Meaning</h2>
+        <p class="bangla-font font-semibold text-2xl">আগ্রহী</p>
+        <h2 class="font-bold text-xl mt-6 mb-2">Example</h2>
+        <p class="text-xl">The kids were eager to open their gifts.</p>
+        <h2 class="bangla-font font-semibold text-xl mt-6 mb-2">সমার্থক শব্দ গুলো</h2>
+        <div class="flex gap-4 w-fit">
+          <p class="p-2 px-4 rounded-xl bg-[#EDF7FF] border border-[#D7E4EF]">Enthusiastic</p>
+          <p class="p-2 px-4 rounded-xl bg-[#EDF7FF] border border-[#D7E4EF]">Excited</p>
+          <p class="p-2 px-4 rounded-xl bg-[#EDF7FF] border border-[#D7E4EF]">Keen</p>
+        </div>
+      </div>
+      <div class="modal-action justify-start mt-4">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn btn-primary">Complete Learning</button>
+          </form>
+        </div>
+    </div>
+  </dialog>
+
+  <script src="./script/index.js"></script>
 </body>
 </html>
