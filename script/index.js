@@ -70,7 +70,7 @@ const renderLessonWords = (words) => {
           <h1 class="font-bold bangla-font text-2xl mb-2">"${word.meaning ? word.meaning : 'অর্থ পাওয়া যায়নি'} / ${word.pronunciation ? word.pronunciation : 'উচ্চারণ পাওয়া যায়নি'}"</h1>
         </div>
         <div class="flex justify-between">
-          <div onclick="my_modal_1.showModal()" class="p-1.5 bg-[#1a91ff1a] rounded-md hover:bg-[#1a91ff80]"><i class="fa-solid fa-circle-exclamation"></i></div>
+          <div onclick="loadWord(${word.id})" class="p-1.5 bg-[#1a91ff1a] rounded-md hover:bg-[#1a91ff80]"><i class="fa-solid fa-circle-exclamation"></i></div>
           <div class="p-1.5 bg-[#1a91ff1a] rounded-md hover:bg-[#1a91ff80]"><i class="fa-solid fa-volume-high"></i></div>
         </div>
       </div>
@@ -79,5 +79,59 @@ const renderLessonWords = (words) => {
   });
 }
 
+const loadWord = (id) => {
+  const url = `https://openapi.programming-hero.com/api/word/${id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => renderWordModal(json.data));
+}
+
+const renderWordModal = (word) => {
+  const modalContainer = document.getElementById('modal-container');
+  modalContainer.innerHTML = '';
+  const modalBox = document.createElement('div');
+  modalBox.innerHTML = `
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box p-3">
+        <div class="border border-[#EDF7FF] rounded-xl p-3">
+          <h1 class="text-2xl font-bold">${word.word} (<span><i class="fa-solid fa-microphone-lines"></i></span>:${word.pronunciation})</h1>
+          <h2 class="font-bold text-xl mt-7 mb-2">Meaning</h2>
+          <p class="bangla-font font-semibold text-2xl">${word.meaning}</p>
+          <h2 class="font-bold text-xl mt-6 mb-2">Example</h2>
+          <p class="text-xl">${word.sentence}</p>
+          <h2 class="bangla-font font-semibold text-xl mt-6 mb-2">সমার্থক শব্দ গুলো</h2>
+          <div id="synonyms-container"></div>
+        </div>
+        <div class="modal-action justify-start mt-4">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn btn-primary">Complete Learning</button>
+            </form>
+          </div>
+      </div>
+    </dialog>
+  `;
+  modalContainer.append(modalBox);
+
+  const synonymsContainer = document.getElementById('synonyms-container');
+  synonymsContainer.append(renderSynonyms(word.synonyms));
+
+  document.getElementById('my_modal_1').showModal();
+}
+
+const renderSynonyms = (synonyms) => {
+  const synonymsContainer = document.createElement('div');
+  synonymsContainer.classList.add('flex', 'gap-4', 'w-fit');
+  synonymsContainer.innerHTML = '';
+
+  synonyms.forEach(word => {
+    const singleWord = document.createElement('div');
+    singleWord.innerHTML = `
+      <p class="p-2 px-4 rounded-xl bg-[#EDF7FF] border border-[#D7E4EF]">${word}</p>
+    `;
+    synonymsContainer.append(singleWord);
+  });
+  return synonymsContainer;
+}
 
 loadLessons();
