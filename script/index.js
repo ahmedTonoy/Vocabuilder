@@ -4,6 +4,10 @@ const loadLessons = () => {
     .then((json) => renderLessons(json.data));
 }
 
+const manageSpinner = () => {
+  document.getElementById('loading-spinner').classList.toggle('hidden');
+}
+
 const levelContainer = document.getElementById('level-container');
 levelContainer.addEventListener('click', (e) => {
   const lessonButtons = document.querySelectorAll('.lesson-button');
@@ -33,7 +37,7 @@ const loadLessonWords = (id) => {
   errorTab.classList.add('hidden');
   const noLessonSelected = document.getElementById('no-lesson-selected');
   noLessonSelected.classList.add('hidden');
-  console.log(id);
+  manageSpinner();
   const url = `https://openapi.programming-hero.com/api/level/${id}`;
   fetch(url)
     .then((res) => res.json())
@@ -50,7 +54,7 @@ const renderErrorTab = () => {
   errorTab.classList.remove('hidden');
   const lessonWordsContainer = document.getElementById('lesson-words-container');
   lessonWordsContainer.classList.add('hidden');
-  console.log(lessonWordsContainer);
+  manageSpinner();
 }
 
 const renderLessonWords = (words) => {
@@ -77,6 +81,7 @@ const renderLessonWords = (words) => {
     `;
     lessonWordsContainer.append(wordDiv);
   });
+  manageSpinner();
 }
 
 const loadWord = (id) => {
