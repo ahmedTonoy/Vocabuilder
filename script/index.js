@@ -1,3 +1,9 @@
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
+
 const loadLessons = () => {
   fetch('https://openapi.programming-hero.com/api/levels/all')
     .then((res) => res.json())
@@ -75,7 +81,7 @@ const renderLessonWords = (words) => {
         </div>
         <div class="flex justify-between">
           <div onclick="loadWord(${word.id})" class="p-1.5 bg-[#1a91ff1a] rounded-md hover:bg-[#1a91ff80]"><i class="fa-solid fa-circle-exclamation"></i></div>
-          <div class="p-1.5 bg-[#1a91ff1a] rounded-md hover:bg-[#1a91ff80]"><i class="fa-solid fa-volume-high"></i></div>
+          <div onclick="pronounceWord('${word.word}')" class="p-1.5 bg-[#1a91ff1a] rounded-md hover:bg-[#1a91ff80]"><i class="fa-solid fa-volume-high"></i></div>
         </div>
       </div>
     `;
