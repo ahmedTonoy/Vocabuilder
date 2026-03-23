@@ -140,3 +140,21 @@ const renderSynonyms = (synonyms) => {
 }
 
 loadLessons();
+
+document.getElementById('btn-search').addEventListener('click', () => {
+  const search = document.getElementById('input-search').value.trim().toLowerCase();
+  
+  fetch('https://openapi.programming-hero.com/api/words/all')
+    .then((res) => res.json())
+    .then((json) => {
+      const allWords = json.data;
+      console.log(allWords);
+      const filterWords = allWords.filter((entity) => entity.word.includes(search));
+      const errorTab = document.getElementById('error-tab');
+      errorTab.classList.add('hidden');
+      const noLessonSelected = document.getElementById('no-lesson-selected');
+      noLessonSelected.classList.add('hidden');
+      manageSpinner();
+      filterWords.length !== 0 ? renderLessonWords(filterWords) : renderErrorTab();
+    });
+});
